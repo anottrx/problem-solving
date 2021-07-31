@@ -12,7 +12,6 @@ public class BOJ7568 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine()); // 전체 사람의 수 N (2 ≤ N ≤ 50)
         int[][] xy = new int[N][2]; // 각 사람의 몸무게와 키 (10 ≤ x, y ≤ 200)
-        int[] answer = new int[N]; // 답
 
         for (int i = 0; i < N; i++) { // N개의 줄에는 각 사람의 몸무게와 키를 나타내는 양의 정수 x와 y가 하나의 공백을 두고 각각 나타난다.
             String input = br.readLine();
@@ -29,11 +28,7 @@ public class BOJ7568 {
                     }
                 }
             }
-            answer[i] = count; // 해당 등수를 답 배열에 넣기
-        }
-
-        for (int i = 0; i < N; i++) { // 답 출력
-            bw.write(answer[i] + " ");
+            bw.write(count + " "); // 답 출력
         }
         bw.flush();
         bw.close();
