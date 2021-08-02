@@ -14,20 +14,18 @@ public class BOJ11866 {
         }
 
         int find = 0; // 자리 위치 확인용. 0으로 초기화
-        System.out.print("<");
+        StringBuilder sb = new StringBuilder("<");
         while (!seats.isEmpty()) { // seats가 빌 때까지 반복한다
             find = find + K - 1; // K만큼 이동한 뒤 1을 뺀다.
             // 맨 첫번째는 0부터 시작하기 때문이고, 그 다음부터는 seats를 하나 뺐기 때문이다
             while (find >= seats.size()) { // seats 길이보다 찾고자하는 위치가 클 경우
                 find = find - seats.size(); // seats 길이보다 짧아질 때까지 반복한다
             }
-            if (seats.size() == 1) { // 맨 마지막 값은 ,를 출력하지 않는다
-                System.out.print(seats.get(find)); // 해당 위치의 값을 출력한다
-            } else { // 마지막을 제외한 나머지는 ,를 출력한다
-                System.out.print(seats.get(find) + ", ");
-            }
+            sb.append(seats.get(find) + ", "); // 해당 위치의 값을 출력한다
             seats.remove(find); // 값을 출력한 뒤 해당 위치의 값을 제거한다
         }
-        System.out.print(">");
+        sb.setLength(sb.length() - 2);
+        sb.append(">");
+        System.out.print(sb);
     }
 }
