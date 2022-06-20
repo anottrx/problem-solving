@@ -2,8 +2,5 @@
 
 function solution(s) {
   const splited = s.split(" ");
-  for (let i = 0; i < splited.length; i++) {
-    splited[i] = Number(splited[i]);
-  }
   return Math.min(...splited) + " " + Math.max(...splited);
 }
