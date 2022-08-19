@@ -1,6 +1,24 @@
 // 프로그래머스 체육복 https://programmers.co.kr/learn/courses/30/lessons/42862
 
 function solution(n, lost, reserve) {
+  const lostSet = new Set(lost.sort());
+  const reserveSet = new Set(reserve.sort());
+  reserveSet.forEach((value) => {
+    if (lostSet.has(value)) {
+      lostSet.delete(value);
+      reserveSet.delete(value);
+    } else if (lostSet.has(value - 1)) {
+      lostSet.delete(value - 1);
+      reserveSet.delete(value - 1);
+    } else if (lostSet.has(value + 1)) {
+      lostSet.delete(value + 1);
+      reserveSet.delete(value + 1);
+    }
+  });
+  return n - lostSet.size;
+}
+
+function befSolution(n, lost, reserve) {
   let answer = 0;
 
   // 정렬
