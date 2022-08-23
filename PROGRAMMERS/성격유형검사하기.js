@@ -33,5 +33,3 @@ function getTypeScore(survey, choice) {
     return { type: survey.charAt(0), score: choiceScore[choice] };
   else return { type: survey.charAt(1), score: choiceScore[choice] }; // 동의
 }
-
-console.log(solution(["TR", "RT", "TR"], [7, 1, 3]));
