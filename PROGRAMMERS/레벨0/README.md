@@ -1,0 +1,1 @@
+![코딩테스트 입문 캘린더](https://user-images.githubusercontent.com/59449215/199142641-e9aba043-a24b-40da-bb1c-ecea5909d7dd.png)
