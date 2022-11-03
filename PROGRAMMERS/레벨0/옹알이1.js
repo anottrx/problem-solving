@@ -2,8 +2,6 @@
 
 function solution(babbling) {
   return babbling
-    .map((word) => {
-      return word.replaceAll(/aya|ye|woo|ma/g, "_").replaceAll(/_/g, "");
-    })
+    .map((word) => word.replaceAll(/aya|ye|woo|ma/g, ""))
     .filter((word) => word.length === 0).length;
 }

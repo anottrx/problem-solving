@@ -3,5 +3,5 @@
 function solution(array) {
   return array
     .map((num) => num.toString().replaceAll(/[012345689]/g, ""))
-    .reduce((prev, cur) => prev + cur.length, 0);
+    .join("").length;
 }

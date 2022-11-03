@@ -5,8 +5,8 @@ function solution(my_string, num1, num2) {
     .split("")
     .map((el, index) => {
       if (index === num1) return my_string.charAt(num2);
-      else if (index === num2) return my_string.charAt(num1);
-      else return el;
+      if (index === num2) return my_string.charAt(num1);
+      return el;
     })
     .join("");
 }
