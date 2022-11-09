@@ -3,13 +3,10 @@
 function solution(s) {
   const answer = [0, 0];
   while (true) {
-    answer[0]++;
+    answer[0] += 1;
     answer[1] += (s.match(/0/g) || []).length;
-    s = s.replace(/0/g, "");
-    if (s === "1") {
-      break;
-    }
-    s = s.length.toString(2);
+    s = s.replaceAll(/0/g, "").length.toString(2);
+    if (s === "1") break;
   }
   return answer;
 }
