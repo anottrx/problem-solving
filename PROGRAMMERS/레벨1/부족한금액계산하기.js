@@ -2,10 +2,6 @@
 
 function solution(price, money, count) {
   let temp = (1 + count) * Math.ceil(count / 2) * price;
-  if (count % 2 === 1) {
-    temp = temp - Math.ceil(count / 2) * price;
-  }
-
-  let answer = temp - money;
-  return answer > 0 ? answer : 0;
+  if (count % 2 === 1) temp = temp - Math.ceil(count / 2) * price;
+  return temp - money > 0 ? temp - money : 0;
 }
