@@ -10,8 +10,8 @@
 
 ### 기타 자료
 
-- [자바스크립트로 문제를 풀면서 알게된 내용을 정리한 링크](https://anottrx.github.io/study/javascript_algorithm/)
-- [이전 자바 기반 알고리즘 스터디 링크](https://github.com/SSAFY-11-Algorithm-Study/AlgorithmStudy)
+- [자바스크립트로 문제를 풀면서 알게 된 내용을 정리한 블로그 포스팅](https://anottrx.github.io/study/javascript_algorithm/)
+- [자바 기반 알고리즘 스터디 레포지토리(2021.07 ~ 2022.05)](https://github.com/SSAFY-11-Algorithm-Study/AlgorithmStudy)
 - [간단한 깃 컨벤션](https://github.com/anottrx/problem-solving/wiki/Git-Convention)
 
 <br />
