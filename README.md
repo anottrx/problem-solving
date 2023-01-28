@@ -1,5 +1,8 @@
-<br />
 <h1 align='center'>코딩테스트 대비 문제 풀이집</h1>
+
+> 현재 알고리즘 문제 풀이는 [자바스크립트 알고리즘 스터디](https://github.com/js-study-algorithm/algorithm-study)에서 주로 진행하고 있습니다
+
+<br />
 
 ## 소개
 
