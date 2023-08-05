@@ -1,0 +1,14 @@
+--프로그래머스 입양 시각 구하기(1) https://school.programmers.co.kr/learn/courses/30/lessons/59412?language=oracle
+
+SELECT CASE WHEN HOUR LIKE '0%' THEN SUBSTR(HOUR, 2, 1)
+ELSE HOUR
+END AS HOUR
+, COUNT
+FROM (
+  SELECT TO_CHAR(DATETIME, 'hh24') AS HOUR, COUNT(*) AS COUNT
+  FROM ANIMAL_OUTS
+  WHERE TO_CHAR(DATETIME, 'hh24') BETWEEN '09' AND '20'
+  GROUP BY TO_CHAR(DATETIME, 'hh24')
+  ORDER BY HOUR
+)
+;
