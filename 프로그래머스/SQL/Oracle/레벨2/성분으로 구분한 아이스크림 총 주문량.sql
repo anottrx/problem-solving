@@ -1,0 +1,9 @@
+--프로그래머스 성분으로 구분한 아이스크림 총 주문량 https://school.programmers.co.kr/learn/courses/30/lessons/133026
+
+SELECT INGREDIENT_TYPE, SUM(TOTAL_ORDER) TOTAL_ORDER
+FROM FIRST_HALF F, ICECREAM_INFO I
+WHERE F.FLAVOR = I.FLAVOR
+GROUP BY INGREDIENT_TYPE
+ORDER BY TOTAL_ORDER
+;
+
