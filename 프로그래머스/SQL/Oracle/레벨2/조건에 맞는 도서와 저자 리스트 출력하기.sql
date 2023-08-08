@@ -1,0 +1,8 @@
+--프로그래머스 조건에 맞는 도서와 저자 리스트 출력하기 https://school.programmers.co.kr/learn/courses/30/lessons/144854
+
+SELECT BOOK_ID, AUTHOR_NAME, TO_CHAR(PUBLISHED_DATE, 'YYYY-MM-DD') AS PUBLISHED_DATE
+FROM BOOK B, AUTHOR A
+WHERE B.AUTHOR_ID = A.AUTHOR_ID
+	AND CATEGORY = '경제'
+ORDER BY PUBLISHED_DATE
+;
