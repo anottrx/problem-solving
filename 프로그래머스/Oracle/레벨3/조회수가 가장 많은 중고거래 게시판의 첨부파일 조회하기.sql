@@ -1,0 +1,9 @@
+--프로그래머스 조회수가 가장 많은 중고거래 게시판의 첨부파일 조회하기 https://school.programmers.co.kr/learn/courses/30/lessons/164671
+
+SELECT '/home/grep/src/' || F.BOARD_ID || '/' || FILE_ID || FILE_NAME || FILE_EXT AS FILE_PATH
+FROM USED_GOODS_BOARD B, USED_GOODS_FILE F
+WHERE B.BOARD_ID = F.BOARD_ID
+GROUP BY F.BOARD_ID, FILE_ID, FILE_NAME, FILE_EXT, VIEWS
+HAVING (SELECT MAX(VIEWS) FROM USED_GOODS_BOARD) = VIEWS
+ORDER BY FILE_ID DESC
+;
