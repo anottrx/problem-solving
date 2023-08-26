@@ -1,0 +1,18 @@
+--프로그래머스 자동차 대여 기록에서 대여중 / 대여 가능 여부 구분하기 https://school.programmers.co.kr/learn/courses/30/lessons/157340
+
+SELECT H.CAR_ID, 
+	CASE WHEN H.CAR_ID IN A.CAR_ID THEN '대여중'
+        ELSE '대여 가능'
+        END AS AVAILABILITY
+FROM (SELECT DISTINCT CAR_ID
+    FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+	) H,
+	(SELECT DISTINCT CAR_ID
+    FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+    WHERE TO_CHAR(START_DATE, 'YYYYMMDD') <= '20221016'
+        AND TO_CHAR(END_DATE, 'YYYYMMDD') >= '20221016'
+	) A
+WHERE H.CAR_ID = A.CAR_ID(+)
+ORDER BY H.CAR_ID DESC
+;
+
