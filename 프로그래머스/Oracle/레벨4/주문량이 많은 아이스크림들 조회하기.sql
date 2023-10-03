@@ -1,0 +1,20 @@
+--프로그래머스 주문량이 많은 아이스크림들 조회하기 https://school.programmers.co.kr/learn/courses/30/lessons/133027
+
+SELECT FLAVOR FROM
+	(
+    SELECT H.FLAVOR, H.TOTAL_ORDER + J.TOTAL_ORDER
+    FROM (
+    	SELECT FLAVOR, SUM(TOTAL_ORDER) AS TOTAL_ORDER
+        FROM FIRST_HALF
+        GROUP BY FLAVOR
+    ) H, (
+    	SELECT FLAVOR, SUM(TOTAL_ORDER) AS TOTAL_ORDER
+        FROM JULY
+        GROUP BY FLAVOR
+    ) J
+    WHERE H.FLAVOR = J.FLAVOR
+    GROUP BY H.FLAVOR, H.TOTAL_ORDER, J.TOTAL_ORDER
+    ORDER BY H.TOTAL_ORDER + J.TOTAL_ORDER DESC
+    )
+WHERE ROWNUM <= 3
+;
